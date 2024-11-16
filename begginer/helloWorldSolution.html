@@ -1,0 +1,178 @@
+<!-- VANILLA JS -->
+<!-- <body>
+  <div>Hello World!</div>
+</body> -->
+
+<!-- USING DOM APIS -->
+<!-- <body>
+  <div id="root"></div>
+  <script type="text/javascript">
+    // getting the root elem
+    const rootElement = document.getElementById("root");
+
+    // creating a div using JS
+    const element = document.createElement("div");
+
+    // setting the content
+    element.textContent = "Hello World!";
+    element.className = "container";
+
+    // appending it to the root
+    rootElement.appendChild(element);
+  </script>
+</body> -->
+
+<!-- USING REACT CDN -->
+<!-- <body>
+  <div id="root"></div>
+  <script
+    crossorigin
+    src="https://unpkg.com/react@18/umd/react.production.min.js"
+  ></script>
+  <script
+    crossorigin
+    src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+  ></script>
+  <script type="text/javascript">
+    const rootElement = document.getElementById("root");
+    const element = React.createElement("div", {
+      className: "container",
+      children: "Hello World!",
+    });
+    ReactDOM.render(element, rootElement);
+  </script>
+</body> -->
+
+<!-- USING BABEL and JSX -->
+<!-- <body>
+  <div id="root"></div>
+  <script
+    crossorigin
+    src="https://unpkg.com/react@18/umd/react.production.min.js"
+  ></script>
+  <script
+    crossorigin
+    src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+  ></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    const rootElement = document.getElementById("root");
+    const element = <div className="container">Hello World</div>;
+    ReactDOM.render(element, rootElement);
+  </script>
+</body> -->
+
+<!-- JSX interpolation -->
+<!-- <body>
+  <div id="root"></div>
+  <script
+    crossorigin
+    src="https://unpkg.com/react@18/umd/react.production.min.js"
+  ></script>
+  <script
+    crossorigin
+    src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+  ></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    const rootElement = document.getElementById('root')
+    const children = 'Hello World!'
+    const className = 'container'
+    const props = {children, className}
+    const element = <div {...props} />
+    ReactDOM.render(element, rootElement)
+  </script>
+</body> -->
+
+<!-- Fragments -->
+<!-- <body>
+  <div id="root"></div>
+  <script
+    crossorigin
+    src="https://unpkg.com/react@18/umd/react.production.min.js"
+  ></script>
+  <script
+    crossorigin
+    src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+  ></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    const rootElement = document.getElementById("root");
+    // const header = React.createElement("h1", null, "Hello World!");
+    // const subTitle = React.createElement("p", null, "React is fun!");
+    // const elem = React.createElement(React.Fragment, null, header, subTitle);
+
+    const elem = (
+      <>
+        <h1>Hello World!</h1>
+        <p>React is fun</p>
+      </>
+    );
+    ReactDOM.render(elem, rootElement);
+  </script>
+</body> -->
+
+<!-- Reusable Components -->
+<!-- <body>
+  <div id="root"></div>
+  <script
+    crossorigin
+    src="https://unpkg.com/react@18/umd/react.production.min.js"
+  ></script>
+  <script
+    crossorigin
+    src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+  ></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    const rootElement = document.getElementById("root");
+
+    const elem1 = (
+      <>
+        <h1>Hello World!</h1>
+        <p>React is fun!</p>
+        <p>React is awesome!</p>
+        <p>React is cool!</p>
+      </>
+    );
+
+    const message1 = <p>React is fun!</p>;
+    const message2 = <p>React is awesome!</p>;
+    const message3 = <p>React is cool!</p>;
+    const elem2 = (
+      <>
+        <h1> Hello World!</h1>
+        {message1}
+        {message2}
+        {message3}
+      </>
+    );
+
+    const message = (props) => <p>{props.msg}</p>;
+
+    const elem3 = (
+      <>
+        <h1> Hello World!</h1>
+        {message({ msg: "React is fun!" })}
+        {message({ msg: "React is awesome!" })}
+        {message({ msg: "Shihab is cool!" })}
+      </>
+    );
+
+    const Message = (props) => <p>{props.msg}</p>;
+
+    const elem4 = (
+      <>
+        <h1> Hello World!</h1>
+        <Message msg={"React is fun!"} />
+        <Message msg={"React is awesome!"} />
+        <Message msg={"React is cool!"} />
+      </>
+    );
+
+    console.log(<Message />);
+    console.log(<h1 />);
+
+    ReactDOM.render(elem4, rootElement);
+  </script>
+</body> -->
