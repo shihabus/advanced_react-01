@@ -24,15 +24,16 @@ function App() {
   );
 }
 
-function setState(newState) {
-  Object.assign(state, newState);
-  // force render
-  renderApp();
-}
-
 function renderApp() {
   ReactDOM.render(<App />, document.getElementById("root"));
 }
 
 // initial render
 renderApp();
+
+function setState(newState) {
+  // mutation
+  Object.assign(state, newState);
+  // force render
+  renderApp();
+}
